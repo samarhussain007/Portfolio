@@ -4,9 +4,10 @@ import { SelectedPage } from "@/shared/types";
 
 type Props = {
   setSelectedPage: (selectedPage: SelectedPage) => void;
+  flexBetween: string;
 };
 
-const Home = ({ setSelectedPage }: Props) => {
+const Home = ({ flexBetween, setSelectedPage }: Props) => {
   const [widthP, setWidthP] = useState(60);
 
   const handleOnMouseMove = (e: any) => {

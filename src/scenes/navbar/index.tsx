@@ -9,10 +9,15 @@ type Props = {
   isTopOfPage: boolean;
   isAboveMediumScreen: boolean;
   selectedPage: SelectedPage;
+  flexBetween: string;
 };
 
-const Navbar = ({ selectedPage, isTopOfPage, isAboveMediumScreen }: Props) => {
-  const flexBetween = "flex items-center justify-between";
+const Navbar = ({
+  flexBetween,
+  selectedPage,
+  isTopOfPage,
+  isAboveMediumScreen,
+}: Props) => {
   const navBgColor = !isTopOfPage
     ? "bg-white text-primary-500"
     : "bg-transparent";
@@ -21,7 +26,7 @@ const Navbar = ({ selectedPage, isTopOfPage, isAboveMediumScreen }: Props) => {
   return (
     <nav>
       <motion.div
-        className={`${flexBetween} fixed top-0 z-30 h-[100px] w-full px-12 ${navBgColor} transition-colors duration-200`}
+        className={`${flexBetween} fixed top-0 z-30 h-[100px] w-full px-8 ${navBgColor} transition-colors duration-200`}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -41,7 +46,7 @@ const Navbar = ({ selectedPage, isTopOfPage, isAboveMediumScreen }: Props) => {
             <img
               alt="Logo"
               src={!isTopOfPage ? LogoRed : Logo}
-              className=" h-16"
+              className="h-12 xs:h-16"
             />
             <div className="relative cursor-pointer">
               <div

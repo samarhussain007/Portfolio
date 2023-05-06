@@ -11,6 +11,7 @@ function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.AboutMe
   );
+  const flexBetween = "flex justify-between items-center";
   console.log(selectedPage);
   useEffect(() => {
     const handleScroll = () => {
@@ -29,9 +30,10 @@ function App() {
         selectedPage={selectedPage}
         isTopOfPage={isTopOfPage}
         isAboveMediumScreen={isAboveMediumScreen}
+        flexBetween={flexBetween}
       />
-      <Home setSelectedPage={setSelectedPage} />
-      <AboutMe setSelectedPage={setSelectedPage} />
+      <Home setSelectedPage={setSelectedPage} flexBetween={flexBetween} />
+      <AboutMe setSelectedPage={setSelectedPage} flexBetween={flexBetween} />
     </>
   );
 }
